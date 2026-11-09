@@ -169,6 +169,49 @@ The `paper/` directory contains an **IEEE four-page conference-style draft**. It
 
 This study uses synthetic transactions and six simulated groups of banks. The most important limitations are the unusual prevalence shift late in the test set, unequal optimization budgets between the first graph baselines and later temporal models, limited repeated-seed results for distributed learning, and the lack of secure aggregation or differential privacy. Neither the centralized–federated gap nor the current client simulation isolates the effect of model-weight sharing from differences in history availability.
 
+## Future Work and Next Steps
+
+The current implementation provides a baseline for graph-based and temporal anti-money laundering (AML) detection. Future work will focus on improving detection performance, uncertainty estimation, model explainability, and federated learning.
+
+### 1. Uncertainty-Aware AML Detection
+- Integrate uncertainty estimation into the temporal GNN architecture to distinguish confident predictions from ambiguous transactions.
+- Investigate Monte Carlo Dropout, deep ensembles, and evidential learning for predictive uncertainty estimation.
+- Evaluate uncertainty calibration using Expected Calibration Error (ECE) and Brier Score.
+- Explore uncertainty-aware alert prioritization to reduce false positives and support financial analysts.
+
+### 2. Explainable Graph Neural Networks (XAI)
+- Integrate graph explainability methods such as GNNExplainer and PGExplainer to identify influential transaction relationships and graph structures.
+- Apply feature attribution techniques, including Integrated Gradients and SHAP, to analyze the contribution of transaction attributes.
+- Develop temporal explanations to identify which historical transactions contribute most to a suspicious transaction prediction.
+- Visualize suspicious transaction subgraphs and provide interpretable explanations for AML analysts.
+
+### 3. Addressing Extreme Class Imbalance
+- Investigate focal loss, class-weighted binary cross-entropy, and asymmetric loss to improve the detection of rare laundering transactions.
+- Explore hard-negative mining and alternative sampling strategies to address the imbalance between legitimate and laundering transactions.
+- Evaluate the impact of different loss functions on precision, recall, F1-score, and PR-AUC.
+- Investigate threshold optimization and cost-sensitive learning to reduce false alerts while maintaining high laundering detection rates.
+
+### 4. Improving Federated Learning
+- Investigate alternative federated optimization methods, such as FedProx, to address heterogeneous transaction distributions across banking clients.
+- Explore personalized federated learning to adapt models to bank-specific transaction characteristics.
+- Evaluate the impact of client heterogeneity, communication constraints, and limited historical information on model performance.
+- Investigate privacy-preserving techniques, including secure aggregation and differential privacy.
+
+### 5. Robustness and Generalization
+- Extend the evaluation to additional IBM AMLworld datasets with different sizes and laundering characteristics.
+- Investigate model robustness under temporal distribution shifts and evolving laundering patterns.
+- Evaluate generalization to previously unseen accounts and transaction structures.
+- Conduct additional random-seed experiments and ablation studies to assess model stability.
+- Explore temporal drift detection and adaptive model updates for continuously evolving transaction networks.
+
+### 6. Evaluation and Practical Deployment
+- Evaluate models under realistic AML operating conditions using precision at fixed alert budgets and recall at fixed false-positive rates.
+- Investigate the trade-off between detection accuracy, computational cost, and inference latency.
+- Assess the reliability of uncertainty estimates and explanations under distribution shifts.
+- Develop an end-to-end inference pipeline for transaction risk scoring and analyst-oriented alert prioritization.
+
+The long-term goal is to develop an uncertainty-aware, explainable, and privacy-conscious graph-based AML framework that improves the detection of suspicious transactions while reducing unnecessary investigations.
+
 ## References and attribution
 
 - IBM AMLworld data and source material: [IBM/AML-Data](https://github.com/IBM/AML-Data).
