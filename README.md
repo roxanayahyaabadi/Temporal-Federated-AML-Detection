@@ -171,7 +171,7 @@ This study uses synthetic transactions and six simulated groups of banks. The mo
 
 ## Future Work and Next Steps
 
-The current implementation provides a baseline for graph-based and temporal anti-money laundering (AML) detection. Future work will focus on improving detection performance, uncertainty estimation, model explainability, and federated learning.
+The current implementation provides a baseline for graph-based and temporal AML detection. Future work will focus on improving detection performance, uncertainty estimation, model explainability, and federated learning.
 
 ### 1. Uncertainty-Aware AML Detection
 - Integrate uncertainty estimation into the temporal GNN architecture to distinguish confident predictions from ambiguous transactions.
