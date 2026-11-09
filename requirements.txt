@@ -1,0 +1,15 @@
+# Core dependencies; install a PyTorch build appropriate for your system/CUDA first.
+# Tested project setup included Python 3.11, Java 17, PySpark 3.5.4,
+# PyTorch 2.11.0+cu128 and PyTorch Geometric 2.8.0.
+# This file is not a complete lockfile for all transitive dependencies.
+numpy
+pandas
+pyarrow
+scipy
+scikit-learn
+pyspark==3.5.4
+xgboost
+joblib
+torch
+torch-geometric
+matplotlib
